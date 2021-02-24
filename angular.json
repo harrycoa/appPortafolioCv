@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "appPortafolioCv"
+    }
+  },
+  "defaultProject": "appPortafolioCv",
+  "cli": {
+    "analytics": false
+  }
 }

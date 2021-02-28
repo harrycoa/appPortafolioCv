@@ -10,6 +10,7 @@ export class CurriculumService {
   educacion: any[] = [];
   testimonio: any[] = [];
   experiencia: any[] = [];
+  blog: any[] = [];
 
   constructor(private http: HttpClient) {
     console.log('firebase');
@@ -17,6 +18,7 @@ export class CurriculumService {
     this.cargarEducacion();
     this.cargarTestimonio();
     this.cargarExperiencia();
+    this.cargarBlog();
   }
 
   private cargarProfesional(){
@@ -44,6 +46,15 @@ export class CurriculumService {
     this.http.get('https://cv-harry-default-rtdb.firebaseio.com/Experiencia.json')
       .subscribe(( resp: any[]) => {
         this.experiencia = resp;
+        console.log(resp);
+      });
+  }
+
+
+  private cargarBlog(){
+    this.http.get('https://cv-harry-default-rtdb.firebaseio.com/Blog.json')
+      .subscribe(( resp: any[]) => {
+        this.blog = resp;
         console.log(resp);
       });
   }
